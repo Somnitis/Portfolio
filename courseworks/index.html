@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MSc Courseworks | Nikolaos Fragkas</title>
+  <meta name="description" content="OpenGL graphics and a custom C++ physics engine, MSc coursework by Nikolaos Fragkas.">
+  <meta name="author" content="Nikolaos Fragkas">
+  <meta name="theme-color" content="#010202">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&amp;family=Nunito+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,700;1,800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="logo" href=".././">Nikolaos Fragkas</a>
+    <hr class="header-rule">
+    <input class="nav-toggle" type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="site-nav" aria-label="Primary">
+      <a href=".././">Home</a>
+      <a href="../courseworks/" aria-current="page">MSc Courseworks</a>
+      <a href="../teamproject/">Team Project</a>
+      <a href="../dissertation/">Dissertation</a>
+      <a href="../cv/">CV</a>
+    </nav>
+  </header>
+  <main id="content">
+
+    <section class="section section-charcoal">
+      <div class="wrap split">
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/uNmZNcruVYs" title="OpenGL graphics coursework" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="copy">
+          <h1>OpenGL Graphics</h1>
+          <p>This project presents three distinct 3D scenes developed with OpenGL, each showcasing specialized rendering techniques. The first scene features a heightmap-based terrain system implementing multi-texturing for surface variation, with procedurally placed trees dynamically positioned according to terrain elevation and normal vectors. The second scene demonstrates advanced lighting systems through a robotic character with fixed-follow camera perspective; this configuration includes a dynamic spotlight emitter originating from the robot that casts real-time shadows onto forward-facing geometry. The third scene returns to heightmap terrain generation to create a volcanic mountain landscape, featuring a GPU-accelerated particle system for volcanic effects.</p>
+          <a class="btn btn-light" href="https://github.com/Somnitis/Graphics" target="_blank" rel="noopener noreferrer">Code</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section-cyan" id="physics">
+      <div class="wrap split">
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/vyAY2Aq454M" title="Physics engine coursework" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="copy">
+          <h2 class="display">Physics engine</h2>
+          <p>This project demonstrates a series of technical scenes showcasing a custom-built physics engine developed natively in C++. Each scene implements sophisticated collision detection algorithms and physically accurate response systems across diverse object types. The engine efficiently handles real-time physics simulations, calculating dynamic interactions between objects with varying properties while maintaining stable collision resolutions and realistic behavioral feedback.</p>
+          <a class="btn btn-black" href="https://github.com/Somnitis/Physics/tree/master/Build/GameTech%20Coursework" target="_blank" rel="noopener noreferrer">Code</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <p>©2018 by Nikolaos Fragkas.</p>
+  </footer>
+</body>
+</html>

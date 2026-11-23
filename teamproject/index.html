@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Project | Nikolaos Fragkas</title>
+  <meta name="description" content="El Bloob, a university team project: a custom C++ engine and competitive paint-control game.">
+  <meta name="author" content="Nikolaos Fragkas">
+  <meta name="theme-color" content="#010202">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&amp;family=Nunito+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,700;1,800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="logo" href=".././">Nikolaos Fragkas</a>
+    <hr class="header-rule">
+    <input class="nav-toggle" type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="site-nav" aria-label="Primary">
+      <a href=".././">Home</a>
+      <a href="../courseworks/">MSc Courseworks</a>
+      <a href="../teamproject/" aria-current="page">Team Project</a>
+      <a href="../dissertation/">Dissertation</a>
+      <a href="../cv/">CV</a>
+    </nav>
+  </header>
+  <main id="content">
+
+    <section class="section section-charcoal">
+      <div class="wrap stack">
+        <h1>Team Project</h1>
+        <p class="subhead">El Bloob</p>
+        <p>This alpha version showcases our university team's custom-built C++ game engine powering a competitive paint-control arena. Supporting 4-player online matches on PC and 2-player local split-screen on PS4, players command spherical vehicles tasked with coating terrain, structures, and objects in their team's color. Strategic paint resource management is core: player balls deplete paint through movement, weapon firing (paint sprayers, pistols, area-coating rockets), and enemy hits. Teams replenish at dedicated paint pools while utilizing speed-boost and high-jump pickups scattered across maps. AI minions autonomously spread paint, capture points, and can be absorbed by players for instant paint replenishment, creating dynamic risk-reward scenarios.</p>
+        <p><strong>My Role as Gameplay Programmer:</strong></p>
+        <ul>
+          <li>Owned core player systems: Ball physics, paint resource logic (depletion/refill), weapon interaction.</li>
+          <li>Designed &amp; implemented the data-driven map architecture for dynamic object/mechanic placement.</li>
+          <li>Developed the real-time territory scoring system tracking environmental dominance.</li>
+        </ul>
+        <a class="btn btn-light" href="#code">Code</a>
+        <div class="video"><iframe src="https://player.vimeo.com/video/263738095" title="El Bloob gameplay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </div>
+    </section>
+    <section class="section section-cyan" id="code">
+      <div class="wrap button-cluster">
+        <a class="btn btn-black" href="https://github.com/Somnitis/UniversityTeamProject/blob/master/Build/PC/DataDrivenMap.cpp" target="_blank" rel="noopener noreferrer">Data Driven Map Code</a>
+        <a class="btn btn-black" href="../assets/docs/Score-Code.pdf" target="_blank" rel="noopener">Score Code</a>
+        <a class="btn btn-black" href="https://github.com/Somnitis/UniversityTeamProject/blob/master/Build/PC/Avatar.cpp" target="_blank" rel="noopener noreferrer">Avatar Code</a>
+        <a class="btn btn-black" href="https://github.com/Somnitis/UniversityTeamProject/blob/master/Build/PC/ControllableAvatar.cpp" target="_blank" rel="noopener noreferrer">Controllable Avatar Code</a>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <p>©2018 by Nikolaos Fragkas.</p>
+  </footer>
+</body>
+</html>
