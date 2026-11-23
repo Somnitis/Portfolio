@@ -26,7 +26,12 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Assemble site
-        run: rsync -a --exclude '.git' --exclude '.github' --exclude '_site' ./ _site/
+        run: |
+          rsync -a --exclude '.git' --exclude '.github' --exclude '_site' ./ _site/
+          # The footer copy in the repo is the branch version. The published
+          # site replaces it on every push so a refresh shows which deploy is live.
+          ver="v${{ github.run_number }}-${GITHUB_SHA::0:7}"
+          find _site -name '*.html' -print0 | xargs -0 -r sed -i "s#<span class=\"site-version\">[^<]*</span>#<span class=\"site-version\">${ver}</span>#g"
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
