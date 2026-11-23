@@ -118,16 +118,45 @@ a {
   color: var(--cyan);
 }
 
+.parallax {
+  position: relative;
+  overflow: clip;
+  isolation: isolate;
+}
+
+.parallax-bg {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  width: 100%;
+  top: -50vh;
+  height: calc(100% + 100vh);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.parallax > :not(.parallax-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 .hero {
   position: relative;
   min-height: min(calc(100vh - var(--header)), 820px);
   display: grid;
   place-items: center;
-  background:
-    linear-gradient(rgba(1, 2, 2, 0.42), rgba(1, 2, 2, 0.42)),
-    url("../assets/images/hero.jpg") center 18% / cover no-repeat;
   padding: 72px 20px 64px;
   text-align: center;
+}
+
+.hero .parallax-bg {
+  background-image:
+    linear-gradient(rgba(1, 2, 2, 0.42), rgba(1, 2, 2, 0.42)),
+    url("../assets/images/hero.jpg");
+  background-position: center, center 28%;
 }
 
 .hero-inner {
@@ -299,9 +328,11 @@ a {
   place-items: center;
   text-align: center;
   padding: 72px 20px;
-  background:
-    url("../assets/images/contact.jpg") center / cover no-repeat;
   color: var(--ink);
+}
+
+.contact .parallax-bg {
+  background-image: url("../assets/images/contact.jpg");
 }
 
 .contact h2,
@@ -493,10 +524,26 @@ a {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
-.banner-work { background-image: url("../assets/images/cv-work.jpg"); }
-.banner-edu { background-image: url("../assets/images/cv-edu.jpg"); }
-.banner-skills { background-image: url("../assets/images/cv-skills.jpg"); }
-.banner-activities { background-image: url("../assets/images/cv-activities.jpg"); }
+.banner.parallax::before {
+  content: none;
+}
+
+.banner .parallax-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #010202;
+  opacity: 0.32;
+}
+
+.banner.bare .parallax-bg::after {
+  opacity: 0;
+}
+
+.banner-work .parallax-bg { background-image: url("../assets/images/cv-work.jpg"); }
+.banner-edu .parallax-bg { background-image: url("../assets/images/cv-edu.jpg"); }
+.banner-skills .parallax-bg { background-image: url("../assets/images/cv-skills.jpg"); }
+.banner-activities .parallax-bg { background-image: url("../assets/images/cv-activities.jpg"); }
 
 .banner-edu h2 {
   color: var(--ink);
