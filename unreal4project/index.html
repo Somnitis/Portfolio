@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unreal 4 project | Nikolaos Fragkas</title>
+  <meta name="description" content="Unreal Engine prototypes: impact reactions, a multiplayer RTS, and a split-screen capture game.">
+  <meta name="author" content="Nikolaos Fragkas">
+  <meta name="theme-color" content="#010202">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&amp;family=Nunito+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,700;1,800&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <a class="logo" href=".././">Nikolaos Fragkas</a>
+    <hr class="header-rule">
+    <input class="nav-toggle" type="checkbox" id="nav-toggle">
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span></label>
+    <nav class="site-nav" aria-label="Primary">
+      <a href=".././">Home</a>
+      <a href="../courseworks/">MSc Courseworks</a>
+      <a href="../teamproject/">Team Project</a>
+      <a href="../dissertation/">Dissertation</a>
+      <a href="../cv/">CV</a>
+    </nav>
+  </header>
+  <main id="content">
+
+    <section class="section section-charcoal">
+      <div class="wrap stack">
+        <h1>Unreal Engine ProjectS</h1>
+        <p class="subhead">Impact Reaction Subsystem</p>
+        <p>I engineered a data-driven Impact Reaction Subsystem that allows designers and technical artists to decouple game logic from visual and physical outcomes. By defining configuration rules inside data assets - covering target materials, gameplay tags, and conditions - the system dynamically triggers context-accurate reactions without hardcoding dependencies.</p>
+        <p>As demonstrated in the video, the subsystem is invoked directly through the weapon's shoot ability event to evaluate hit data, query the DA_BulletImpacts or DA_Footsteps ruleset, and resolve real-time responses. This modular architecture keeps the codebase clean while giving content creators full flexibility to scale environmental interactions.</p>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/sqbOkOessRo" title="Impact reaction subsystem" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </div>
+    </section>
+    <section class="section section-ink">
+      <div class="wrap stack">
+        <h2 class="display">Multiplayer RTS Prototype (Weekend Project)</h2>
+        <p>This prototype showcases a fully functional multiplayer Real-Time Strategy (RTS) game developed rapidly over a single weekend. Designed with an authoritative server architecture, it leverages Unreal Engine's robust Gameplay Ability System (GAS) and Attribute Sets to ensure fair, synchronized gameplay for all connected clients. Core mechanics implemented include dynamic unit health, shields, temporary boosting effects, responsive unit movement, and targeted attacking capabilities. The system supports spawning diverse unit types with varying levels and facilitates building upgrades for persistent progression.</p>
+        <p>Network synchronization is handled server-authoritatively, guaranteeing consistent game state and fairness across all clients. To enhance team identification during gameplay, units dynamically display team affiliation through RGB-colored heads corresponding to their assigned team. While visual effects (VFX) and unit coloration utilize Unreal's visual scripting, all core gameplay logic - including abilities, attributes, movement, combat, spawning, and upgrades - is implemented natively in C++. This C++ foundation utilizes inheritance hierarchies, component-based design, and interfaces to maximize code clarity, reusability, and runtime performance.</p>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/AfTPsTDZSNQ" title="Multiplayer RTS prototype" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </div>
+    </section>
+    <section class="section section-charcoal">
+      <div class="wrap stack">
+        <h2 class="display">Split Screen Fast Prototyping Game</h2>
+        <p>This prototype showcases the core competitive mechanics for a time-based multiplayer game where victory hinges on controlling the highest number of in-game objects by the match's conclusion. Players capture objectives through direct physical contact or by shooting them with projectiles. Success, however, comes at a cost: each capture action depletes the player's health. This health loss is visually represented by the player character shrinking in size. Crucially, falling below a critical health threshold imposes severe gameplay restrictions, disabling the player's ability to capture new objectives or fire projectiles, forcing strategic retreat or resource seeking.</p>
+        <p>The arena features dynamic environmental systems to enhance tactical depth. Hazardous traps, such as spike fields, rapidly accelerate player health depletion upon contact. Strategic pickups offer temporary advantages, either increasing the player's maximum health (and consequently their size) or enhancing mobility through greater speed, faster rolling, and higher jumps. Team-based paint pools introduce a zone-control element; these only activate when a single player successfully controls both multi-colored foundation cubes beneath a pool. Once active, these pools provide significant tactical advantages, healing players aligned with the controlling team's color while damaging opponents who enter.</p>
+        <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/VZo4eLWNUAI" title="Split screen prototype" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <p>©2018 by Nikolaos Fragkas.</p>
+  </footer>
+</body>
+</html>
