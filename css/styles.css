@@ -397,6 +397,13 @@ a {
   margin: 0 auto;
 }
 
+.site-version {
+  margin-left: 0.75em;
+  color: var(--cyan);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
