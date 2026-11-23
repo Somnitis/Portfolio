@@ -7,10 +7,20 @@
   --chip: #abd5d5;
   --yellow: #ffe152;
   --content: 980px;
+  --content-wide: min(1240px, calc(100vw - 48px));
   --header: 148px;
   --font-display: "League Spartan", "Arial Narrow", Impact, sans-serif;
   --font-body: "Nunito Sans", "Avenir Next", "Segoe UI", sans-serif;
   --font-nav: "Open Sans", "Segoe UI", sans-serif;
+
+  /* Typography scale — change sizes here to update the whole site. */
+  --font-size-title-1: clamp(49.5px, 6.75vw, 81px);
+  --font-size-title-2: 46.25px;
+  --font-size-text-1: 27.5px;
+  --font-size-text-2: 22.5px;
+  --font-size-text-3: 17.5px;
+  --font-size-text-4: 20px;
+
   color-scheme: dark;
 }
 
@@ -30,7 +40,7 @@ body {
   color: var(--white);
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 16px;
+  font-size: var(--font-size-text-4);
   line-height: 1.55;
 }
 
@@ -68,7 +78,7 @@ a {
   color: var(--cyan);
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 24px;
+  font-size: var(--font-size-text-1);
   line-height: 1.25;
   text-decoration: none;
 }
@@ -107,7 +117,7 @@ a {
 .site-nav a {
   color: var(--white);
   font-family: var(--font-nav);
-  font-size: 14px;
+  font-size: var(--font-size-text-3);
   line-height: 1.43;
   text-decoration: none;
 }
@@ -173,7 +183,7 @@ a {
   position: relative;
   z-index: 2;
   width: min(920px, 100%);
-  padding: 16px 0 26px;
+  padding: 24px 0 38px;
 }
 
 .hero-inner::before {
@@ -192,38 +202,37 @@ a {
   margin: 0 0 14px;
   font-style: italic;
   font-weight: 800;
-  font-size: 24px;
+  font-size: var(--font-size-text-1);
   line-height: 1.25;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 
 .hero .eyebrow {
-  margin-bottom: 6px;
-  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .hero h1 {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(44px, 6vw, 72px);
+  font-size: var(--font-size-title-1);
   line-height: 1.05;
   letter-spacing: 0.01em;
 }
 
 .hero .lede {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   max-width: 920px;
-  font-size: 16px;
-  line-height: 1.35;
+  font-size: var(--font-size-text-2);
+  line-height: 1.55;
 }
 
 .lede {
   margin: 0 auto 36px;
   max-width: 860px;
   font-style: italic;
-  font-size: 18px;
+  font-size: var(--font-size-text-2);
   font-weight: 300;
 }
 
@@ -245,7 +254,7 @@ a {
   background: var(--cyan);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--font-size-text-3);
   font-weight: 400;
   line-height: 1.2;
   text-decoration: none;
@@ -262,7 +271,7 @@ a {
   padding: 6px 14px;
   background: var(--ink);
   color: var(--cyan);
-  font-size: 15px;
+  font-size: var(--font-size-text-3);
 }
 
 .btn-dark:hover,
@@ -340,32 +349,108 @@ a {
 .section-physics .parallax-bg { background-image: url("../assets/images/physics.jpg"); }
 .section-elbloob .parallax-bg { background-image: url("../assets/images/elbloob.png"); }
 .section-vindolanda .parallax-bg { background-image: url("../assets/images/vindolanda.png"); }
-.section-unreal .parallax-bg { background-image: url("../assets/images/unreal.jpg"); }
+.section-godot {
+  color: var(--white);
+}
+
+.section-godot .parallax-bg {
+  background-color: #2f3a63;
+  background-image: url("../assets/images/godot-emblem.png");
+  background-size: min(72vmin, 640px);
+  background-repeat: no-repeat;
+  background-position: center calc(50% - 250px);
+}
+
+.section-godot.section-cyan.parallax .parallax-bg::after {
+  background: rgba(24, 30, 52, 0.55);
+  opacity: 1;
+}
+
+.section-unreal .parallax-bg {
+  background-image: url("../assets/images/ue-emblem.jpg");
+  background-size: cover;
+  background-position: center calc(50% + 25px);
+}
+
+.section-unreal.section-charcoal.parallax .parallax-bg::after {
+  background: var(--charcoal);
+  opacity: 0.48;
+}
+
+.section-unreal.section-ink.parallax .parallax-bg::after {
+  background: var(--ink);
+  opacity: 0.42;
+}
 
 .wrap {
   width: min(var(--content), 100%);
   margin: 0 auto;
 }
 
+.wrap.split,
+.wrap.stack,
+.wrap.two-col,
+.wrap.button-cluster,
+.wrap.jobs-cols,
+.jobs .wrap {
+  width: var(--content-wide);
+}
+
 .section-title {
   margin: 0 0 48px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32px;
+  font-size: var(--font-size-title-1);
   line-height: 1.25;
   text-align: center;
 }
 
-.project {
-  display: grid;
-  grid-template-columns: minmax(0, 460px) minmax(0, 1fr);
-  gap: 40px;
-  align-items: center;
-  margin: 0 auto 56px;
+#projects {
+  /* Slightly darker than .btn (var(--cyan)); shows at section start and end. */
+  --project-canvas: var(--cyan-deep);
+  --project-band-dark: #003f3f;
+  --project-band-light: #0a7c7c;
+  padding: 6px 0 40px;
+  background: var(--project-canvas);
 }
 
-.project:last-child {
-  margin-bottom: 0;
+#projects .wrap {
+  width: 100%;
+  max-width: none;
+}
+
+#projects .section-title {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 56px;
+  /* Top space above the label is half the previous amount. */
+  padding: 15px 20px 4px;
+  background: color-mix(in srgb, var(--project-canvas) 55%, transparent);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--font-size-title-1);
+  line-height: 1.25;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 46px;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 32px clamp(20px, 5vw, 72px);
+  background: var(--project-band-dark);
+  color: var(--white);
+}
+
+.project:nth-of-type(even) {
+  background: var(--project-band-light);
 }
 
 .project img {
@@ -377,37 +462,66 @@ a {
 }
 
 .project h3 {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32px;
-  line-height: 1.25;
+  font-size: var(--font-size-title-2);
+  line-height: 1.2;
+  color: var(--white);
 }
 
 .project p {
-  margin: 0 0 22px;
-  font-size: 16px;
+  margin: 0 0 26px;
+  font-size: var(--font-size-text-2);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+#projects .btn-dark {
+  min-height: 37px;
+  padding: 7px 16px;
+  font-size: calc(var(--font-size-text-3) * 1.15);
 }
 
 .contact {
+  /* One full-width banner, cropped shorter than the image so parallax has room without tiling. */
+  --contact-crop: 0.5;
+  --contact-image-height: calc(100vw * 738 / 1920);
   position: relative;
-  min-height: 640px;
+  min-height: calc(var(--contact-image-height) * (1 - var(--contact-crop)));
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 72px 20px;
+  padding: 40px 20px;
   color: var(--ink);
 }
 
 .contact .parallax-bg {
-  background-image: url("../assets/images/contact.jpg");
+  /* Center the crop so spare above/below is equal; never stack a second copy. */
+  top: calc(var(--contact-image-height) * var(--contact-crop) * -0.5);
+  height: auto;
+  background: none;
+}
+
+.contact .parallax-bg img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: min(920px, 100%);
 }
 
 .contact h2,
 .contact p {
   display: inline-block;
-  margin: 0 0 22px;
-  padding: 2px 8px;
+  margin: 0;
+  padding: 4px 12px;
 }
 
 .contact h2 {
@@ -415,14 +529,16 @@ a {
   color: var(--cyan);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32px;
-  line-height: 1.25;
+  font-size: var(--font-size-title-1);
+  line-height: 1.2;
 }
 
 .contact p {
   background: var(--chip);
   color: var(--ink);
   font-weight: 700;
+  font-size: var(--font-size-text-2);
+  line-height: 1.45;
 }
 
 .contact a {
@@ -432,13 +548,13 @@ a {
 .socials {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  margin-top: 8px;
+  gap: 16px;
+  margin-top: 6px;
 }
 
 .socials a {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   background: var(--ink);
@@ -446,8 +562,8 @@ a {
 }
 
 .socials svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   fill: currentColor;
 }
 
@@ -456,7 +572,7 @@ a {
   color: var(--white);
   padding: 22px 20px 28px;
   font-family: var(--font-nav);
-  font-size: 14px;
+  font-size: var(--font-size-text-3);
   line-height: 1.43;
 }
 
@@ -474,29 +590,36 @@ a {
 
 .split {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 36px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: clamp(24px, 3vw, 48px);
+  align-items: stretch;
 }
 
 .split .copy {
   text-align: center;
+  min-width: 0;
+}
+
+.split .copy p {
+  width: 100%;
+  max-width: none;
 }
 
 .split h1,
+.split h2.display,
 .stack h1,
 .stack h2.display {
   margin: 0 0 12px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32px;
+  font-size: var(--font-size-title-2);
   line-height: 1.2;
 }
 
 .subhead {
   margin: 0 0 18px;
   font-weight: 800;
-  font-size: 20px;
+  font-size: var(--font-size-text-1);
   line-height: 1.25;
 }
 
@@ -512,6 +635,13 @@ a {
   background: #000;
 }
 
+.split .video {
+  aspect-ratio: auto;
+  height: 100%;
+  min-height: clamp(260px, 32vw, 480px);
+  align-self: stretch;
+}
+
 .video iframe {
   position: absolute;
   inset: 0;
@@ -521,7 +651,7 @@ a {
 }
 
 .stack {
-  width: min(860px, 100%);
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -529,8 +659,27 @@ a {
 .stack .video,
 .stack + .video,
 .video-block {
-  width: min(940px, 100%);
+  width: 100%;
+  max-width: min(1100px, 100%);
   margin: 28px auto 0;
+  aspect-ratio: 16 / 9;
+}
+
+.video.playable {
+  max-width: min(900px, 100%);
+  aspect-ratio: 16 / 10;
+  min-height: 420px;
+  border: 2px solid rgba(1, 2, 2, 0.35);
+  margin-bottom: 36px;
+}
+
+.play-actions {
+  margin: 0;
+}
+
+.btn-play {
+  min-height: 52px;
+  padding: 10px 28px;
 }
 
 .stack ul,
@@ -578,8 +727,13 @@ a {
 }
 
 .banner .banner-inner {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 66%;
+  transform: translate(-50%, -50%);
   z-index: 1;
+  width: max-content;
+  max-width: calc(100% - 40px);
 }
 
 .banner h1,
@@ -587,7 +741,7 @@ a {
   margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(28px, 4vw, 32px);
+  font-size: var(--font-size-title-1);
   line-height: 1.25;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
@@ -595,7 +749,7 @@ a {
 .banner p {
   margin: 10px 0 0;
   font-weight: 800;
-  font-size: 20px;
+  font-size: var(--font-size-text-1);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
@@ -616,21 +770,43 @@ a {
 }
 
 .banner-work .parallax-bg { background-image: url("../assets/images/cv-work.jpg"); }
-.banner-edu .parallax-bg { background-image: url("../assets/images/cv-edu.jpg"); }
+.banner-edu {
+  min-height: 528px;
+}
+
+.banner-edu .parallax-bg {
+  background-image: url("../assets/images/cv-edu.jpg");
+  top: calc(-50vh - 200px);
+}
 .banner-skills .parallax-bg { background-image: url("../assets/images/cv-skills.jpg"); }
 .banner-activities .parallax-bg { background-image: url("../assets/images/cv-activities.jpg"); }
 
-.banner-edu h2 {
-  color: var(--ink);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.85);
+.banner-edu h1 {
+  color: var(--cyan);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
-.banner-skills h2 {
+.banner-skills h1 {
   color: var(--cyan);
 }
 
 .jobs {
   padding: 56px 20px 72px;
+}
+
+.wrap.jobs-cols {
+  width: min(1680px, calc(100vw - 48px));
+}
+
+.jobs-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 40px clamp(40px, 4.5vw, 72px);
+  align-items: start;
+}
+
+.jobs-cols .job + .job {
+  margin-top: 0;
 }
 
 .job + .job {
@@ -642,7 +818,7 @@ a {
   margin: 0 0 8px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32px;
+  font-size: var(--font-size-title-2);
   line-height: 1.25;
 }
 
@@ -650,12 +826,12 @@ a {
 .job .game {
   margin: 0 0 6px;
   font-weight: 800;
-  font-size: 20px;
+  font-size: var(--font-size-text-1);
   line-height: 1.25;
 }
 
 .job .game {
-  font-size: 18px;
+  font-size: var(--font-size-text-2);
   margin-bottom: 12px;
 }
 
@@ -665,11 +841,11 @@ a {
   gap: 40px;
 }
 
-.two-col h3 {
+.two-col h2 {
   margin: 0 0 12px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 32px;
+  font-size: var(--font-size-title-2);
   line-height: 1.25;
 }
 
@@ -682,7 +858,12 @@ a {
 }
 
 .pdf-banner {
-  min-height: 340px;
+  min-height: 289px;
+}
+
+/* Continue the Activities image lower in frame so the two banners don't match. */
+.pdf-banner .parallax-bg {
+  top: calc(-50vh - 105px);
 }
 
 .btn-pdf {
@@ -694,7 +875,7 @@ a {
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: var(--font-size-text-1);
   box-shadow: 0 3px 0 rgba(255, 140, 98, 0.35);
 }
 
@@ -710,7 +891,40 @@ a {
   outline-offset: 3px;
 }
 
+@media (max-width: 1024px) {
+  .wrap.split,
+  .wrap.stack,
+  .wrap.two-col,
+  .wrap.button-cluster,
+  .wrap.jobs-cols,
+  .jobs .wrap {
+    width: min(100%, calc(100vw - 32px));
+  }
+
+  .split,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .split .video {
+    order: -1;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+}
+
 @media (max-width: 860px) {
+  :root {
+    --font-size-title-1: 54px;
+    --font-size-title-2: 37.5px;
+    --font-size-text-1: 25px;
+    --font-size-text-2: 20px;
+    --font-size-text-3: 17.5px;
+    --font-size-text-4: 18.75px;
+  }
+
   .hero {
     --hero-crop: 0;
     min-height: 82vh;
@@ -732,12 +946,23 @@ a {
     display: none;
   }
 
-  .hero h1 {
-    font-size: 40px;
+  .contact {
+    --contact-crop: 0.35;
+    min-height: 360px;
   }
 
-  .hero .lede {
-    font-size: 15px;
+  .contact .parallax-bg {
+    top: calc(var(--contact-image-height) * var(--contact-crop) * -0.5);
+    height: auto;
+  }
+
+  .contact .parallax-bg img {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-inner {
+    gap: 16px;
   }
 
   .nav-burger {
@@ -785,20 +1010,38 @@ a {
     transform: translateY(-7px) rotate(-45deg);
   }
 
-  .project,
-  .split,
-  .two-col {
+  .wrap.split,
+  .wrap.stack,
+  .wrap.two-col,
+  .wrap.button-cluster,
+  .wrap.jobs-cols,
+  .jobs .wrap {
+    width: min(100%, calc(100vw - 32px));
+  }
+
+  .jobs-cols {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
-    font-size: 48px;
+  .button-cluster {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .project h3,
-  .job h2,
-  .job h3,
-  .section-title {
-    font-size: 28px;
+  /* Slot UI needs desktop width; open fullscreen on phone instead. */
+  .video.playable {
+    display: none;
+  }
+
+  .btn-play {
+    width: min(100%, 320px);
+    min-height: 56px;
+    font-size: var(--font-size-text-2);
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 20px;
   }
 }

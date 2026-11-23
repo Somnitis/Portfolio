@@ -6,9 +6,9 @@ Static copy of the [Wix portfolio](https://fragkasnikolaos.wixsite.com/website),
 
 - Home, with the project list and contact links
 - MSc Courseworks (OpenGL and the physics engine)
-- Team Project (El Bloob)
+- Team Projects (El Bloob)
 - Dissertation (Vindolanda Mystery)
-- Unreal Engine projects
+- Personal Projects
 - CV, including the downloadable PDF
 
 Videos stay embedded from YouTube and Vimeo. Images, the CV, and the score-system PDF are stored in this repository.
