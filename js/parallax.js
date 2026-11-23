@@ -25,7 +25,15 @@
       var rect = section.getBoundingClientRect();
       if (rect.bottom < -viewH || rect.top > viewH * 2) return;
       var fromCenter = rect.top + rect.height / 2 - viewH / 2;
-      var shift = Math.max(-limit, Math.min(limit, -fromCenter * factor));
+      var shift = -fromCenter * factor;
+      if (section.classList.contains("hero")) {
+        var spareBelow = bg.offsetHeight + bg.offsetTop - section.offsetHeight;
+        var spareAbove = Math.max(0, -bg.offsetTop);
+        var maxDown = Math.min(spareAbove, Math.max(0, -rect.top));
+        shift = Math.max(-Math.max(0, spareBelow), Math.min(maxDown, shift));
+      } else {
+        shift = Math.max(-limit, Math.min(limit, shift));
+      }
       bg.style.transform = "translate3d(0," + shift.toFixed(2) + "px,0)";
     });
   }
