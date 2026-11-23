@@ -274,6 +274,37 @@ a {
   color: var(--white);
 }
 
+.section.parallax {
+  background: transparent;
+}
+
+.section .parallax-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.section-charcoal.parallax .parallax-bg::after {
+  background: var(--charcoal);
+  opacity: 0.72;
+}
+
+.section-cyan.parallax .parallax-bg::after {
+  background: var(--cyan);
+  opacity: 0.74;
+}
+
+.section-ink.parallax .parallax-bg::after {
+  background: var(--ink);
+  opacity: 0.74;
+}
+
+.section-graphics .parallax-bg { background-image: url("../assets/images/graphics.jpg"); }
+.section-physics .parallax-bg { background-image: url("../assets/images/physics.jpg"); }
+.section-elbloob .parallax-bg { background-image: url("../assets/images/elbloob.png"); }
+.section-vindolanda .parallax-bg { background-image: url("../assets/images/vindolanda.png"); }
+.section-unreal .parallax-bg { background-image: url("../assets/images/unreal.jpg"); }
+
 .wrap {
   width: min(var(--content), 100%);
   margin: 0 auto;
