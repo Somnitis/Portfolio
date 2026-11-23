@@ -15,11 +15,11 @@ Videos stay embedded from YouTube and Vimeo. Images, the CV, and the score-syste
 
 ## Publish on GitHub Pages
 
-1. Merge this branch into `main`.
-2. In the repository on GitHub, open **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+The workflow in `.github/workflows/pages.yml` publishes the site on every push to `main`. If Pages is still off, that workflow turns it on and sets the source to GitHub Actions.
 
-The workflow in `.github/workflows/pages.yml` publishes the site on every push to `main`. The address will be:
+You can also turn it on by hand: **Settings → Pages → Build and deployment → Source: GitHub Actions**, then re-run the failed deploy.
+
+The address will be:
 
 `https://somnitis.github.io/Portfolio/`
 
