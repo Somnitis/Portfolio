@@ -19,7 +19,11 @@ The workflow in `.github/workflows/pages.yml` publishes the site on every push t
 
 You can also turn it on by hand: **Settings → Pages → Build and deployment → Source: GitHub Actions**, then re-run the failed deploy.
 
-The address will be:
+Live site:
+
+`https://fragkasnikolaos.com`
+
+GitHub Pages fallback:
 
 `https://somnitis.github.io/Portfolio/`
 
